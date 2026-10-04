@@ -11,8 +11,7 @@ get_header();
 ?>
 <section class="page-hero plain" aria-labelledby="page-title">
   <div class="container">
-    <p class="eyebrow">404</p>
-    <h1 id="page-title" class="h-xl" style="margin-top:18px;font-size:clamp(2.6rem,6vw,5rem)"><?php esc_html_e( 'Esta', 'laparada' ); ?> <span class="accent"><?php esc_html_e( 'parada no existe.', 'laparada' ); ?></span></h1>
+    <h1 id="page-title" class="h-xl" style="font-size:clamp(2.6rem,6vw,5rem)"><?php esc_html_e( 'Esta', 'laparada' ); ?> <span class="accent"><?php esc_html_e( 'parada no existe.', 'laparada' ); ?></span></h1>
   </div>
 </section>
 <section class="section">

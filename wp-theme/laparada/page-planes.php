@@ -16,8 +16,7 @@ get_header();
   <?php lp_image( 'logo', array( 'class' => 'hero-bolt', 'aria-hidden' => 'true' ) ); ?>
   <div class="container">
     <nav class="crumb" aria-label="Ruta"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a><span aria-hidden="true">/</span><span>Planes</span></nav>
-    <p class="eyebrow">Planes · Temporada 2026-2027</p>
-    <h1 id="planes-title" class="h-xl" style="margin-top:20px;font-size:clamp(2.8rem,7vw,6rem)">Elige cómo <span class="accent">quieres entrenar.</span></h1>
+    <h1 id="planes-title" class="h-xl" style="font-size:clamp(2.8rem,7vw,6rem)">Elige cómo <span class="accent">quieres entrenar.</span></h1>
     <p class="lead">Cambia la frecuencia, no el método. Los dos planes siguen el mismo proceso de tecnificación y trabajan lo técnico, lo táctico y lo mental en grupos reducidos por nivel.</p>
 
     <ul class="includes includes-wrap" aria-label="Incluido en los dos planes">
@@ -34,7 +33,6 @@ get_header();
 <section class="section paper" aria-labelledby="plans-title" style="padding-top:clamp(64px,8vw,104px)">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow">Escuela de tecnificación</p>
       <h2 id="plans-title" class="h-lg">Mismo método. <span class="accent">Tú eliges los días.</span></h2>
       <p class="lead">Los dos planes incluyen exactamente lo mismo. La única diferencia es cuántos días entrena a la semana. ¿Dudas entre uno y otro? Escríbenos y te ayudamos a decidir según su edad, su nivel y lo que ya entrena con su club.</p>
     </div>
@@ -76,7 +74,6 @@ get_header();
 <section class="section paper" aria-labelledby="start-title" style="padding-top:0">
   <div class="container">
     <div class="sec-head" style="margin-bottom:40px;padding-top:clamp(56px,7vw,88px);border-top:1px solid var(--line-paper)">
-      <p class="eyebrow">Cómo empezar</p>
       <h2 id="start-title" class="h-lg">Tres pasos <span class="accent">hasta su primera sesión.</span></h2>
     </div>
     <ol class="start">
@@ -91,8 +88,7 @@ get_header();
   <div class="container">
     <div class="extra">
       <div class="extra-body">
-        <p class="eyebrow">Campus y eventos</p>
-        <h2 id="campus-title" class="h-md" style="margin-top:16px">Navidad, Semana Santa y verano</h2>
+        <h2 id="campus-title" class="h-md">Navidad, Semana Santa y verano</h2>
         <p class="lead">Los campus, sesiones intensivas y batallas de porteros se contratan aparte y están abiertos a cualquier portero. Los alumnos de la escuela tienen descuentos y ventajas.</p>
         <a class="btn btn-wa wa" href="<?php echo esc_url( lp_wa_url() ); ?>" data-msg="Hola, quiero información y precios de los próximos campus de La Parada."><svg aria-hidden="true"><use href="#i-wa"/></svg>Pregunta por el próximo campus</a>
       </div>
@@ -101,7 +97,6 @@ get_header();
 
     <div class="faq-grid" style="margin-top:clamp(72px,9vw,120px)">
       <div class="sec-head" style="margin-bottom:0">
-        <p class="eyebrow">Preguntas frecuentes</p>
         <h2 class="h-lg">Antes de <span class="accent">empezar.</span></h2>
         <p class="lead">¿Tienes otra duda? Pregúntanos por WhatsApp y te respondemos.</p>
       </div>
@@ -119,8 +114,7 @@ get_header();
 <section class="section final" aria-labelledby="final-title">
   <?php lp_image( 'final_bg', array( 'class' => 'bg', 'loading' => 'lazy' ) ); ?>
   <div class="container">
-    <p class="eyebrow">Plazas limitadas por grupo</p>
-    <h2 id="final-title" class="h-lg" style="margin-top:20px">¿Hablamos de <span class="accent">su plan?</span></h2>
+    <h2 id="final-title" class="h-lg">¿Hablamos de <span class="accent">su plan?</span></h2>
     <p class="lead">Cuéntanos cómo es tu portero y te decimos qué plan le encaja mejor.</p>
     <div class="btn-row">
       <a class="btn btn-wa wa" href="<?php echo esc_url( lp_wa_url() ); ?>" data-msg="Hola, quiero que me ayudéis a elegir el plan de La Parada que mejor le encaja a mi portero.">

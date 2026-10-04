@@ -13,8 +13,8 @@ while ( have_posts() ) :
 	?>
 <section class="page-hero plain" aria-labelledby="page-title">
   <div class="container">
-    <p class="eyebrow"><?php echo esc_html( get_the_date() ); ?></p>
-    <h1 id="page-title" class="h-xl" style="margin-top:18px;font-size:clamp(2.4rem,5.5vw,4.4rem)"><?php the_title(); ?></h1>
+    <h1 id="page-title" class="h-xl" style="font-size:clamp(2.4rem,5.5vw,4.4rem)"><?php the_title(); ?></h1>
+    <p class="entry-meta"><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></p>
   </div>
 </section>
 <section class="section">

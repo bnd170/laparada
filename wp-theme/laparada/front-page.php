@@ -15,8 +15,7 @@ get_header();
   <?php lp_image( 'logo', array( 'class' => 'hero-bolt', 'aria-hidden' => 'true' ) ); ?>
   <div class="container hero-grid">
     <div>
-      <p class="eyebrow">Escuela de tecnificación · solo porteros</p>
-      <h1 id="hero-title" class="h-xl" style="margin-top:22px">
+      <h1 id="hero-title" class="h-xl">
         <span class="line">Formamos al</span>
         <span class="line accent">portero</span>
         <span class="line stroke">moderno</span>
@@ -59,7 +58,6 @@ get_header();
       </figure>
       <div>
         <div class="sec-head reveal" style="margin-bottom:0">
-          <p class="eyebrow">El portero moderno</p>
           <h2 id="moderno-title" class="h-lg">Ya no solo para. <span class="accent">Juega, decide y lidera.</span></h2>
           <p class="lead">El fútbol ha cambiado y la portería con él. Hoy el portero inicia el juego, defiende el espacio a la espalda de su defensa, ordena al equipo y gestiona en segundos el peso de cada acierto y cada error. Su posición es única, y por eso merece una formación específica.</p>
         </div>
@@ -86,7 +84,6 @@ get_header();
 <section class="section" id="metodo" aria-labelledby="metodo-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Nuestro método</p>
       <h2 id="metodo-title" class="h-lg">Tres dimensiones. <span class="accent">Un mismo portero.</span></h2>
       <p class="lead">Un portero completo no se construye a base de paradas sueltas. Cada sesión combina el gesto técnico, su aplicación táctica en situaciones reales de juego y el trabajo mental que permite rendir cuando más importa.</p>
     </div>
@@ -150,7 +147,6 @@ get_header();
 <section class="section paper" id="proceso" aria-labelledby="proceso-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Proceso de tecnificación</p>
       <h2 id="proceso-title" class="h-lg">Un camino, <span class="accent">no un entrenamiento suelto.</span></h2>
       <p class="lead">Acompañamos al portero desde su etapa inicial hasta su desarrollo adulto. En cada etapa seguimos el mismo ciclo: identificar, adaptar y llevar cada técnica del conocimiento a la competición.</p>
     </div>
@@ -193,7 +189,6 @@ get_header();
 <section class="section" aria-labelledby="dif-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Por qué La Parada</p>
       <h2 id="dif-title" class="h-lg">Especialistas en <span class="accent">una sola posición.</span></h2>
       <p class="lead">Somos una escuela orientada exclusivamente a la formación de porteros. Entrenadores titulados, exporteros profesionales y colaboradores que transmiten su experiencia sin olvidar lo más importante: disfrutar de este deporte.</p>
     </div>
@@ -226,7 +221,6 @@ get_header();
 <section class="section" style="padding-top:0" aria-labelledby="gal-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Así entrenamos</p>
       <h2 id="gal-title" class="h-lg">Sesiones reales. <span class="accent">Porteros reales.</span></h2>
     </div>
     <div class="gallery">
@@ -241,8 +235,7 @@ get_header();
 <section class="section paper" aria-labelledby="val-title">
   <div class="container values-grid">
     <div class="reveal">
-      <p class="eyebrow">Valores</p>
-      <h2 id="val-title" class="h-lg" style="margin-top:20px">Formamos porteros. <span class="accent">Y personas.</span></h2>
+      <h2 id="val-title" class="h-lg">Formamos porteros. <span class="accent">Y personas.</span></h2>
       <p class="lead" style="margin-top:22px">El deporte es mucho más que desarrollo físico: es un medio para construir valores personales y sociales que acompañan toda la vida.</p>
       <p class="lead">Trabajamos de forma amistosa pero competitiva, poniendo en lo más alto la deportividad, la disciplina y el afán de superación de cada alumno.</p>
     </div>
@@ -256,7 +249,6 @@ get_header();
 <section class="section" id="campus" aria-labelledby="campus-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Campus y eventos</p>
       <h2 id="campus-title" class="h-lg">Más horas de portería <span class="accent">durante todo el año.</span></h2>
       <p class="lead">Además de la escuela, organizamos sesiones intensivas, campus y batallas de porteros, con ventajas para nuestros alumnos.</p>
     </div>
@@ -288,8 +280,7 @@ get_header();
   <div class="container">
     <div class="gear-head reveal">
       <div>
-        <p class="eyebrow">Equipamiento propio</p>
-        <h2 id="gear-title" class="h-md" style="margin-top:16px">Guantes diseñados <span class="accent">por porteros.</span></h2>
+        <h2 id="gear-title" class="h-md">Guantes diseñados <span class="accent">por porteros.</span></h2>
       </div>
       <a class="link-arrow" href="<?php echo esc_url( home_url( '/mi-cuenta/tiendaonline' ) ); ?>">Ir a la tienda <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
@@ -305,8 +296,7 @@ get_header();
 <section class="section final" aria-labelledby="final-title">
   <?php lp_image( 'final_bg', array( 'class' => 'bg', 'loading' => 'lazy' ) ); ?>
   <div class="container">
-    <p class="eyebrow">Plazas limitadas por grupo</p>
-    <h2 id="final-title" class="h-lg" style="margin-top:20px">Su próxima parada empieza <span class="accent">con un mensaje.</span></h2>
+    <h2 id="final-title" class="h-lg">Su próxima parada empieza <span class="accent">con un mensaje.</span></h2>
     <p class="lead">Escríbenos y te contamos cómo trabajamos, qué grupo encaja con tu portero y cómo empezar. Te responde una persona del equipo, no un bot.</p>
     <div class="btn-row">
       <a class="btn btn-wa wa" href="<?php echo esc_url( lp_wa_url() ); ?>" data-msg="Hola, quiero que mi portero empiece en La Parada. ¿Me contáis cómo funciona?">
