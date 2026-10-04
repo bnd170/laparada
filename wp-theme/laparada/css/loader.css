@@ -1,0 +1,42 @@
+/* Pantalla de carga. Se inserta en línea en <head> (inc/loader.php) para que pinte antes que nada.
+   Solo se muestra si el script de cabecera añade .lp-js al <html>; sin JS o con "reducir movimiento" no existe. */
+.lp-loader{display:none}
+html.lp-js{background:#0A0C09}
+html.lp-js:not(.lp-done){overflow:hidden}
+html.lp-js .lp-loader{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#0A0C09;color:#F3F4EF;pointer-events:all}
+.lp-loader-row{display:flex;align-items:center;gap:clamp(16px,2.8vw,40px)}
+.lp-loader-logo{height:clamp(74px,11.2vw,161px);width:auto;flex:none;overflow:visible}
+.lp-loader-logo path{fill:#F3F4EF;fill-opacity:0;stroke:#7FDB2E;stroke-width:3;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.lp-loader-col{display:flex;flex-direction:column;gap:6px}
+.lp-loader-mask{display:flex;overflow:hidden;padding:6px 0 10px;line-height:.9;font-family:"Barlow Condensed",system-ui,sans-serif;font-weight:800;font-size:clamp(44px,9.4vw,136px);text-transform:uppercase}
+.lp-loader-mask span{display:inline-block;transform:translateY(115%)}
+.lp-loader-mask .sp{width:.22em}
+.lp-loader-tag{opacity:0;padding-left:6px;font-family:"Barlow",system-ui,sans-serif;font-size:clamp(10px,1.3vw,18px);letter-spacing:.5em;text-transform:uppercase;color:#7FDB2E}
+.lp-loader-bar{position:absolute;left:0;right:0;bottom:0;height:6px;background:#7FDB2E;transform:scaleX(0);transform-origin:0 50%}
+
+/* Intro (1,5 s): solo cuando las fuentes están listas (.lp-run) */
+html.lp-run .lp-loader-logo path{animation:lpDraw 1.5s forwards}
+html.lp-run .lp-loader-mask span{animation:lpRise .6s cubic-bezier(.2,.8,.2,1) forwards}
+html.lp-run .lp-loader-mask span:nth-child(1){animation-delay:.3s}
+html.lp-run .lp-loader-mask span:nth-child(2){animation-delay:.345s}
+html.lp-run .lp-loader-mask span:nth-child(4){animation-delay:.435s}
+html.lp-run .lp-loader-mask span:nth-child(5){animation-delay:.48s}
+html.lp-run .lp-loader-mask span:nth-child(6){animation-delay:.525s}
+html.lp-run .lp-loader-mask span:nth-child(7){animation-delay:.57s}
+html.lp-run .lp-loader-mask span:nth-child(8){animation-delay:.615s}
+html.lp-run .lp-loader-mask span:nth-child(9){animation-delay:.66s}
+html.lp-run .lp-loader-tag{animation:lpTag .5s ease-out .85s forwards}
+html.lp-run .lp-loader-bar{animation:lpBar 1.5s forwards}
+
+@keyframes lpDraw{0%{stroke-dashoffset:1;fill-opacity:0;stroke-opacity:1;animation-timing-function:cubic-bezier(.5,0,.2,1)}50%{stroke-dashoffset:0;fill-opacity:0;stroke-opacity:1;animation-timing-function:ease-out}70%{stroke-dashoffset:0;fill-opacity:1;stroke-opacity:0}100%{stroke-dashoffset:0;fill-opacity:1;stroke-opacity:0}}
+@keyframes lpRise{to{transform:translateY(0)}}
+@keyframes lpTag{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Avance irregular, como una carga real */
+@keyframes lpBar{0%{transform:scaleX(0);animation-timing-function:ease-out}18%{transform:scaleX(.18)}25%{transform:scaleX(.2);animation-timing-function:ease-out}45%{transform:scaleX(.52)}52%{transform:scaleX(.54);animation-timing-function:ease-out}75%{transform:scaleX(.86)}82%{transform:scaleX(.88);animation-timing-function:ease-out}100%{transform:scaleX(1)}}
+
+/* Salida (0,55 s): el telón sube y deja la web a la vista */
+html.lp-done .lp-loader{pointer-events:none;animation:lpLift .55s cubic-bezier(.76,0,.24,1) forwards}
+html.lp-done .lp-loader::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:#64C218}
+@keyframes lpLift{to{transform:translateY(-100%)}}
+
+@media (prefers-reduced-motion:reduce){html.lp-js .lp-loader{display:none}html.lp-js:not(.lp-done){overflow:auto}}

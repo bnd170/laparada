@@ -54,6 +54,22 @@ add_action(
 		);
 
 		$wp_customize->add_setting(
+			'lp_loader',
+			array(
+				'default'           => true,
+				'sanitize_callback' => 'rest_sanitize_boolean',
+			)
+		);
+		$wp_customize->add_control(
+			'lp_loader',
+			array(
+				'section' => 'lp_contact',
+				'label'   => __( 'Mostrar la animación de carga con el logo', 'laparada' ),
+				'type'    => 'checkbox',
+			)
+		);
+
+		$wp_customize->add_setting(
 			'lp_uyyy',
 			array(
 				'default'           => true,

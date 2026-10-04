@@ -38,6 +38,15 @@ Solo las imágenes se editan desde el administrador (menú **La Parada**); los t
 - Sin configurar nada, se usan los archivos de `assets/`.
 - Para añadir un hueco nuevo: añádelo en `inc/defaults.php` y usa `lp_image( 'clave' )` en la plantilla.
 
+## Animación de carga
+
+Al entrar en cada página se muestra el logo dibujándose y LA PARADA subiendo letra a letra (1,5 s) y después el telón sube (0,55 s). Código en `inc/loader.php` y `css/loader.css` (van en línea en el `<head>` para pintar antes que nada).
+
+- No retrasa la web: se superpone mientras la página carga. Mínimo 1,5 s; máximo 4,5 s por seguridad.
+- No aparece sin JavaScript ni si el visitante tiene activado «reducir movimiento».
+- Se puede desactivar en Personalizar › La Parada.
+- Para cambiar la duración: `MIN` en `inc/loader.php` y las duraciones de `css/loader.css`.
+
 ## Galería
 
 Las imágenes de la galería abren un visor a pantalla completa (`js/lightbox.js`, solo se carga donde hay galería): flechas, Esc, clic fuera y deslizar en móvil. Sin JavaScript, cada imagen enlaza a su versión grande.
