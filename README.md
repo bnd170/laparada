@@ -6,6 +6,9 @@ Propuesta de rediseño de [laparadaonline.com](https://laparadaonline.com), cent
 - `planes.html`: planes de la escuela (Base 40 €/mes, Tecnificación 60 €/mes).
 - `styles.css`: estilos compartidos.
 - `assets/`: imágenes optimizadas en WebP.
+- `loader.css` + `loader.js`: pantalla de carga con el logo (1,5 s, solo si el navegador lo admite y sin «reducir movimiento»).
+- `lightbox.js`: visor de la galería (clic en una imagen para verla grande).
+- `wp-theme/`: la misma web convertida en tema de WordPress 7.1.2 (ver `wp-theme/README.md`). Los cambios de diseño se mantienen en ambas versiones.
 
 Todas las llamadas a la acción abren una conversación de WhatsApp con un mensaje ya escrito.
 

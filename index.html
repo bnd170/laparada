@@ -12,8 +12,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/g13.webp">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="loader.css">
+<script src="loader.js"></script>
 </head>
 <body>
+<div class="lp-loader" id="lp-loader" aria-hidden="true">
+  <div class="lp-loader-row">
+    <svg class="lp-loader-logo" viewBox="0 0 160 269" focusable="false"><path pathLength="1" fill-rule="evenodd" d="M 0 167 L 77 0 L 142 8 L 136 23 L 88 113 L 82 129 L 126 131 C 148 132 160 146 160 170 C 160 200 137 227 106 233 L 93 233 L 77 269 L 21 265 L 68 174 L 38 168 L 0 169 Z M 20 153 L 20 155 L 62 158 L 85 165 L 39 255 L 70 257 L 88 220 C 106 225 122 218 136 203 C 148 190 151 173 147 158 C 143 146 132 142 110 141 L 67 141 L 63 136 L 92 75 L 122 19 L 91 15 L 84 16 Z M 97 201 L 114 169 C 115 163 118 161 120 164 C 127 173 121 188 112 196 C 105 202 98 204 97 203 Z"/></svg>
+    <div class="lp-loader-col">
+      <div class="lp-loader-mask"><span>L</span><span>A</span><span class="sp"></span><span>P</span><span>A</span><span>R</span><span>A</span><span>D</span><span>A</span></div>
+      <div class="lp-loader-tag">Escuela de porteros</div>
+    </div>
+  </div>
+  <div class="lp-loader-bar"></div>
+</div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -54,8 +66,7 @@
   <img class="hero-bolt" src="assets/logo.png" alt="" aria-hidden="true">
   <div class="container hero-grid">
     <div>
-      <p class="eyebrow">Escuela de tecnificación · solo porteros</p>
-      <h1 id="hero-title" class="h-xl" style="margin-top:22px">
+      <h1 id="hero-title" class="h-xl">
         <span class="line">Formamos al</span>
         <span class="line accent">portero</span>
         <span class="line stroke">moderno</span>
@@ -98,7 +109,6 @@
       </figure>
       <div>
         <div class="sec-head reveal" style="margin-bottom:0">
-          <p class="eyebrow">El portero moderno</p>
           <h2 id="moderno-title" class="h-lg">Ya no solo para. <span class="accent">Juega, decide y lidera.</span></h2>
           <p class="lead">El fútbol ha cambiado y la portería con él. Hoy el portero inicia el juego, defiende el espacio a la espalda de su defensa, ordena al equipo y gestiona en segundos el peso de cada acierto y cada error. Su posición es única, y por eso merece una formación específica.</p>
         </div>
@@ -125,7 +135,6 @@
 <section class="section" id="metodo" aria-labelledby="metodo-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Nuestro método</p>
       <h2 id="metodo-title" class="h-lg">Tres dimensiones. <span class="accent">Un mismo portero.</span></h2>
       <p class="lead">Un portero completo no se construye a base de paradas sueltas. Cada sesión combina el gesto técnico, su aplicación táctica en situaciones reales de juego y el trabajo mental que permite rendir cuando más importa.</p>
     </div>
@@ -189,7 +198,6 @@
 <section class="section paper" id="proceso" aria-labelledby="proceso-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Proceso de tecnificación</p>
       <h2 id="proceso-title" class="h-lg">Un camino, <span class="accent">no un entrenamiento suelto.</span></h2>
       <p class="lead">Acompañamos al portero desde su etapa inicial hasta su desarrollo adulto. En cada etapa seguimos el mismo ciclo: identificar, adaptar y llevar cada técnica del conocimiento a la competición.</p>
     </div>
@@ -232,7 +240,6 @@
 <section class="section" aria-labelledby="dif-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Por qué La Parada</p>
       <h2 id="dif-title" class="h-lg">Especialistas en <span class="accent">una sola posición.</span></h2>
       <p class="lead">Somos una escuela orientada exclusivamente a la formación de porteros. Entrenadores titulados, exporteros profesionales y colaboradores que transmiten su experiencia sin olvidar lo más importante: disfrutar de este deporte.</p>
     </div>
@@ -265,22 +272,21 @@
 <section class="section" style="padding-top:0" aria-labelledby="gal-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Así entrenamos</p>
       <h2 id="gal-title" class="h-lg">Sesiones reales. <span class="accent">Porteros reales.</span></h2>
     </div>
     <div class="gallery">
-      <figure><img src="assets/g03.webp" alt="Portero estirándose para blocar un balón raso durante un ejercicio" width="1400" height="837" loading="lazy"></figure>
-      <figure><img src="assets/g05.webp" alt="Portero saltando para atrapar un balón alto" width="900" height="1522" loading="lazy"></figure>
-      <figure><img src="assets/g08.webp" alt="Alumno con la camiseta negra de La Parada" width="900" height="1611" loading="lazy"></figure>
-      <figure><img src="assets/g14.webp" alt="Grupo de porteros esperando su turno frente a la portería" width="1400" height="837" loading="lazy"></figure>
-      <figure><img src="assets/g06.webp" alt="Vista aérea de una escalera de coordinación en el césped" width="900" height="1607" loading="lazy"></figure>
-      <figure><img src="assets/g19.webp" alt="Portero realizando una parada acrobática" width="900" height="1608" loading="lazy"></figure>
-      <figure><img src="assets/g01.webp" alt="Alumnos trabajando desplazamientos con balón" width="1400" height="840" loading="lazy"></figure>
-      <figure><img src="assets/g09.webp" alt="Portero en carrera entre conos de agilidad" width="900" height="1617" loading="lazy"></figure>
-      <figure><img src="assets/g02.webp" alt="Ejercicio de porteros en la portería con el entrenador" width="900" height="1200" loading="lazy"></figure>
-      <figure><img src="assets/g11.webp" alt="Vista aérea de un ejercicio con colchoneta azul" width="900" height="1608" loading="lazy"></figure>
-      <figure><img src="assets/g07.webp" alt="Portero de espaldas preparado para la siguiente acción" width="900" height="1340" loading="lazy"></figure>
-      <figure><img src="assets/hero2.webp" alt="Varios porteros entrenando en el campo" width="1400" height="837" loading="lazy"></figure>
+      <figure><a class="lb-item" href="assets/g03.webp" aria-label="Ampliar imagen: Portero estirándose para blocar un balón raso durante un ejercicio"><img src="assets/g03.webp" alt="Portero estirándose para blocar un balón raso durante un ejercicio" width="1400" height="837" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g05.webp" aria-label="Ampliar imagen: Portero saltando para atrapar un balón alto"><img src="assets/g05.webp" alt="Portero saltando para atrapar un balón alto" width="900" height="1522" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g08.webp" aria-label="Ampliar imagen: Alumno con la camiseta negra de La Parada"><img src="assets/g08.webp" alt="Alumno con la camiseta negra de La Parada" width="900" height="1611" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g14.webp" aria-label="Ampliar imagen: Grupo de porteros esperando su turno frente a la portería"><img src="assets/g14.webp" alt="Grupo de porteros esperando su turno frente a la portería" width="1400" height="837" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g06.webp" aria-label="Ampliar imagen: Vista aérea de una escalera de coordinación en el césped"><img src="assets/g06.webp" alt="Vista aérea de una escalera de coordinación en el césped" width="900" height="1607" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g19.webp" aria-label="Ampliar imagen: Portero realizando una parada acrobática"><img src="assets/g19.webp" alt="Portero realizando una parada acrobática" width="900" height="1608" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g01.webp" aria-label="Ampliar imagen: Alumnos trabajando desplazamientos con balón"><img src="assets/g01.webp" alt="Alumnos trabajando desplazamientos con balón" width="1400" height="840" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g09.webp" aria-label="Ampliar imagen: Portero en carrera entre conos de agilidad"><img src="assets/g09.webp" alt="Portero en carrera entre conos de agilidad" width="900" height="1617" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g02.webp" aria-label="Ampliar imagen: Ejercicio de porteros en la portería con el entrenador"><img src="assets/g02.webp" alt="Ejercicio de porteros en la portería con el entrenador" width="900" height="1200" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g11.webp" aria-label="Ampliar imagen: Vista aérea de un ejercicio con colchoneta azul"><img src="assets/g11.webp" alt="Vista aérea de un ejercicio con colchoneta azul" width="900" height="1608" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/g07.webp" aria-label="Ampliar imagen: Portero de espaldas preparado para la siguiente acción"><img src="assets/g07.webp" alt="Portero de espaldas preparado para la siguiente acción" width="900" height="1340" loading="lazy"></a></figure>
+      <figure><a class="lb-item" href="assets/hero2.webp" aria-label="Ampliar imagen: Varios porteros entrenando en el campo"><img src="assets/hero2.webp" alt="Varios porteros entrenando en el campo" width="1400" height="837" loading="lazy"></a></figure>
     </div>
   </div>
 </section>
@@ -289,8 +295,7 @@
 <section class="section paper" aria-labelledby="val-title">
   <div class="container values-grid">
     <div class="reveal">
-      <p class="eyebrow">Valores</p>
-      <h2 id="val-title" class="h-lg" style="margin-top:20px">Formamos porteros. <span class="accent">Y personas.</span></h2>
+      <h2 id="val-title" class="h-lg">Formamos porteros. <span class="accent">Y personas.</span></h2>
       <p class="lead" style="margin-top:22px">El deporte es mucho más que desarrollo físico: es un medio para construir valores personales y sociales que acompañan toda la vida.</p>
       <p class="lead">Trabajamos de forma amistosa pero competitiva, poniendo en lo más alto la deportividad, la disciplina y el afán de superación de cada alumno.</p>
     </div>
@@ -304,7 +309,6 @@
 <section class="section" id="campus" aria-labelledby="campus-title">
   <div class="container">
     <div class="sec-head reveal">
-      <p class="eyebrow">Campus y eventos</p>
       <h2 id="campus-title" class="h-lg">Más horas de portería <span class="accent">durante todo el año.</span></h2>
       <p class="lead">Además de la escuela, organizamos sesiones intensivas, campus y batallas de porteros, con ventajas para nuestros alumnos.</p>
     </div>
@@ -336,8 +340,7 @@
   <div class="container">
     <div class="gear-head reveal">
       <div>
-        <p class="eyebrow">Equipamiento propio</p>
-        <h2 id="gear-title" class="h-md" style="margin-top:16px">Guantes diseñados <span class="accent">por porteros.</span></h2>
+        <h2 id="gear-title" class="h-md">Guantes diseñados <span class="accent">por porteros.</span></h2>
       </div>
       <a class="link-arrow" href="https://laparadaonline.com/mi-cuenta/tiendaonline">Ir a la tienda <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
@@ -356,8 +359,7 @@
 <section class="section final" aria-labelledby="final-title">
   <img class="bg" src="assets/g05.webp" alt="" loading="lazy">
   <div class="container">
-    <p class="eyebrow">Plazas limitadas por grupo</p>
-    <h2 id="final-title" class="h-lg" style="margin-top:20px">Su próxima parada empieza <span class="accent">con un mensaje.</span></h2>
+    <h2 id="final-title" class="h-lg">Su próxima parada empieza <span class="accent">con un mensaje.</span></h2>
     <p class="lead">Escríbenos y te contamos cómo trabajamos, qué grupo encaja con tu portero y cómo empezar. Te responde una persona del equipo, no un bot.</p>
     <div class="btn-row">
       <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, quiero que mi portero empiece en La Parada. ¿Me contáis cómo funciona?">
@@ -439,6 +441,7 @@
   document.getElementById('y').textContent = new Date().getFullYear();
 })();
 </script>
+<script src="lightbox.js" defer></script>
 <script src="uyyy.js"></script>
 </body>
 </html>

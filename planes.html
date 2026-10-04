@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="loader.css">
+<script src="loader.js"></script>
 <style>
 /* Planes: hero compacto → incluye → 3 planes → campus → cómo empezar → FAQ → CTA */
 .page-hero{position:relative;padding-top:clamp(140px,16vw,190px);padding-bottom:clamp(48px,6vw,80px);overflow:hidden;isolation:isolate}
@@ -84,6 +86,16 @@
 </style>
 </head>
 <body>
+<div class="lp-loader" id="lp-loader" aria-hidden="true">
+  <div class="lp-loader-row">
+    <svg class="lp-loader-logo" viewBox="0 0 160 269" focusable="false"><path pathLength="1" fill-rule="evenodd" d="M 0 167 L 77 0 L 142 8 L 136 23 L 88 113 L 82 129 L 126 131 C 148 132 160 146 160 170 C 160 200 137 227 106 233 L 93 233 L 77 269 L 21 265 L 68 174 L 38 168 L 0 169 Z M 20 153 L 20 155 L 62 158 L 85 165 L 39 255 L 70 257 L 88 220 C 106 225 122 218 136 203 C 148 190 151 173 147 158 C 143 146 132 142 110 141 L 67 141 L 63 136 L 92 75 L 122 19 L 91 15 L 84 16 Z M 97 201 L 114 169 C 115 163 118 161 120 164 C 127 173 121 188 112 196 C 105 202 98 204 97 203 Z"/></svg>
+    <div class="lp-loader-col">
+      <div class="lp-loader-mask"><span>L</span><span>A</span><span class="sp"></span><span>P</span><span>A</span><span>R</span><span>A</span><span>D</span><span>A</span></div>
+      <div class="lp-loader-tag">Escuela de porteros</div>
+    </div>
+  </div>
+  <div class="lp-loader-bar"></div>
+</div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
@@ -124,8 +136,7 @@
   <img class="hero-bolt" src="assets/logo.png" alt="" aria-hidden="true">
   <div class="container">
     <nav class="crumb" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Planes</span></nav>
-    <p class="eyebrow">Planes · Temporada 2026-2027</p>
-    <h1 id="planes-title" class="h-xl" style="margin-top:20px;font-size:clamp(2.8rem,7vw,6rem)">Elige cómo <span class="accent">quieres entrenar.</span></h1>
+    <h1 id="planes-title" class="h-xl" style="font-size:clamp(2.8rem,7vw,6rem)">Elige cómo <span class="accent">quieres entrenar.</span></h1>
     <p class="lead">Cambia la frecuencia, no el método. Los dos planes siguen el mismo proceso de tecnificación y trabajan lo técnico, lo táctico y lo mental en grupos reducidos por nivel.</p>
 
     <ul class="includes includes-wrap" aria-label="Incluido en los dos planes">
@@ -142,7 +153,6 @@
 <section class="section paper" aria-labelledby="plans-title" style="padding-top:clamp(64px,8vw,104px)">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow">Escuela de tecnificación</p>
       <h2 id="plans-title" class="h-lg">Mismo método. <span class="accent">Tú eliges los días.</span></h2>
       <p class="lead">Los dos planes incluyen exactamente lo mismo. La única diferencia es cuántos días entrena a la semana. ¿Dudas entre uno y otro? Escríbenos y te ayudamos a decidir según su edad, su nivel y lo que ya entrena con su club.</p>
     </div>
@@ -184,7 +194,6 @@
 <section class="section paper" aria-labelledby="start-title" style="padding-top:0">
   <div class="container">
     <div class="sec-head" style="margin-bottom:40px;padding-top:clamp(56px,7vw,88px);border-top:1px solid var(--line-paper)">
-      <p class="eyebrow">Cómo empezar</p>
       <h2 id="start-title" class="h-lg">Tres pasos <span class="accent">hasta su primera sesión.</span></h2>
     </div>
     <ol class="start">
@@ -199,8 +208,7 @@
   <div class="container">
     <div class="extra">
       <div class="extra-body">
-        <p class="eyebrow">Campus y eventos</p>
-        <h2 id="campus-title" class="h-md" style="margin-top:16px">Navidad, Semana Santa y verano</h2>
+        <h2 id="campus-title" class="h-md">Navidad, Semana Santa y verano</h2>
         <p class="lead">Los campus, sesiones intensivas y batallas de porteros se contratan aparte y están abiertos a cualquier portero. Los alumnos de la escuela tienen descuentos y ventajas.</p>
         <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, quiero información y precios de los próximos campus de La Parada."><svg aria-hidden="true"><use href="#i-wa"/></svg>Pregunta por el próximo campus</a>
       </div>
@@ -209,7 +217,6 @@
 
     <div class="faq-grid" style="margin-top:clamp(72px,9vw,120px)">
       <div class="sec-head" style="margin-bottom:0">
-        <p class="eyebrow">Preguntas frecuentes</p>
         <h2 class="h-lg">Antes de <span class="accent">empezar.</span></h2>
         <p class="lead">¿Tienes otra duda? Pregúntanos por WhatsApp y te respondemos.</p>
       </div>
@@ -227,8 +234,7 @@
 <section class="section final" aria-labelledby="final-title">
   <img class="bg" src="assets/g05.webp" alt="" loading="lazy">
   <div class="container">
-    <p class="eyebrow">Plazas limitadas por grupo</p>
-    <h2 id="final-title" class="h-lg" style="margin-top:20px">¿Hablamos de <span class="accent">su plan?</span></h2>
+    <h2 id="final-title" class="h-lg">¿Hablamos de <span class="accent">su plan?</span></h2>
     <p class="lead">Cuéntanos cómo es tu portero y te decimos qué plan le encaja mejor.</p>
     <div class="btn-row">
       <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, quiero que me ayudéis a elegir el plan de La Parada que mejor le encaja a mi portero.">
