@@ -1,0 +1,7 @@
+# Fotos originales sin optimizar (la web usa assets/)
+originales/
+# Copia de la home preparada para el artifact de claude.ai
+build/
+# Configuración local
+.claude/
+.DS_Store

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planes La Parada</title>
+<meta name="description" content="Planes de entrenamiento de la escuela de porteros La Parada: grupos reducidos por nivel, sesiones individuales y campus.">
+<meta name="theme-color" content="#0A0C09">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Planes: hero compacto → incluye → 3 planes → campus → cómo empezar → FAQ → CTA */
+.page-hero{position:relative;padding-top:clamp(140px,16vw,190px);padding-bottom:clamp(48px,6vw,80px);overflow:hidden;isolation:isolate}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(55% 60% at 85% 20%,rgba(100,194,24,.16),transparent 70%),var(--ink)}
+.page-hero .hero-bolt{top:auto;bottom:-30%;right:-4%;width:min(46vw,520px)}
+.page-hero .lead{margin-top:24px}
+.crumb{display:flex;gap:8px;align-items:center;font-size:.95rem;color:var(--muted-dark);margin-bottom:22px}
+.crumb a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.crumb a:hover{color:var(--on-dark)}
+
+.includes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line-dark);border-radius:var(--radius-lg);overflow:hidden;margin-top:clamp(40px,5vw,56px)}
+.includes li{list-style:none;display:grid;grid-template-columns:28px 1fr;gap:14px;padding:22px 24px;border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);background:var(--ink-2)}
+.includes li:nth-child(3n){border-right:0}
+.includes li:nth-last-child(-n+3){border-bottom:0}
+.includes svg{width:24px;height:24px;color:var(--lime);margin-top:2px}
+.includes b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.3rem;line-height:1.1}
+.includes span{font-size:.95rem;color:var(--muted-dark)}
+.includes-wrap{padding:0;margin:0}
+@media (max-width:900px){.includes{grid-template-columns:1fr 1fr}.includes li:nth-child(3n){border-right:1px solid var(--line-dark)}.includes li:nth-child(2n){border-right:0}.includes li:nth-last-child(-n+3){border-bottom:1px solid var(--line-dark)}.includes li:nth-last-child(-n+2){border-bottom:0}}
+@media (max-width:560px){.includes{grid-template-columns:1fr}.includes li{border-right:0!important;border-bottom:1px solid var(--line-dark)!important}.includes li:last-child{border-bottom:0!important}}
+
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:stretch;max-width:920px;margin-inline:auto}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--paper-2);color:var(--on-paper);border-radius:var(--radius-lg);padding:clamp(24px,3vw,34px);border:2px solid transparent;min-width:0}
+.plan.featured{background:var(--on-paper);color:var(--paper);border-color:var(--lime)}
+.plan-badge{position:absolute;top:-14px;left:clamp(24px,3vw,34px);background:var(--lime);color:var(--on-lime);font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;padding:5px 12px;border-radius:999px}
+.plan-for{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.9rem;color:var(--lime-ink)}
+.plan.featured .plan-for{color:var(--lime)}
+.plan h3{font-size:clamp(2.2rem,3.4vw,2.9rem);margin-top:10px}
+.plan-freq{margin-top:6px;font-weight:600}
+.plan-price{display:flex;align-items:baseline;gap:6px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line-paper);font-variant-numeric:tabular-nums}
+.plan.featured .plan-price{border-color:var(--line-dark)}
+.plan-price .from{font-size:.95rem;font-weight:600;color:var(--muted-paper)}
+.plan-price .amount{font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,5vw,4.2rem);line-height:.9}
+.plan-price .unit{font-weight:600;color:var(--muted-paper)}
+.plan.featured .from,.plan.featured .unit{color:var(--muted-dark)}
+.plan p.desc{margin-top:18px;color:var(--muted-paper)}
+.plan.featured p.desc{color:var(--muted-dark)}
+.plan ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px;flex:1;align-content:start}
+.plan li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:1rem}
+.plan li svg{width:20px;height:20px;margin-top:3px;color:var(--lime-ink)}
+.plan.featured li svg{color:var(--lime)}
+.plan .btn{margin-top:28px;width:100%}
+.plan .btn-outline{border-color:var(--on-paper);color:var(--on-paper)}
+.plan .btn-outline:hover{background:var(--on-paper);color:var(--paper)}
+@media (max-width:760px){.plans{grid-template-columns:1fr;max-width:560px}}
+
+.extra{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(56px,7vw,88px);background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--radius-lg);overflow:hidden}
+.extra-body{padding:clamp(24px,4vw,48px)}
+.extra-body .lead{margin-top:16px}
+.extra-body .btn{margin-top:26px}
+.extra figure{margin:0;height:100%;min-height:280px}
+.extra img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.extra{grid-template-columns:1fr}.extra figure{order:-1;min-height:220px;aspect-ratio:16/9}}
+
+.start{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.start li{background:var(--paper-2);border-radius:var(--radius);padding:26px 24px}
+.start .n{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--on-paper);color:var(--lime);font-family:var(--display);font-weight:800;font-size:1.4rem}
+.start h3{font-size:1.7rem;margin-top:18px}
+.start p{margin-top:8px;color:var(--muted-paper)}
+@media (max-width:860px){.start{grid-template-columns:1fr}}
+
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,88px);align-items:start}
+.faq{border-top:1px solid var(--line-dark)}
+.faq details{border-bottom:1px solid var(--line-dark)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:1.4rem;line-height:1.15;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-dark);display:grid;place-items:center;font-family:var(--body);font-weight:500;font-size:1.4rem;color:var(--lime);transition:transform .2s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--muted-dark);max-width:62ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="header" id="top">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="La Parada, inicio">
+      <img src="assets/logo.png" alt="" width="30" height="40">
+      <span>La Parada<small>Escuela de porteros</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="index.html#portero-moderno">Portero moderno</a>
+      <a href="index.html#metodo">Método</a>
+      <a href="index.html#proceso">Proceso</a>
+      <a href="index.html#campus">Campus</a>
+      <a href="planes.html" aria-current="page" style="color:var(--on-dark)">Planes</a>
+      <a href="https://laparadaonline.com/mi-cuenta/tiendaonline">Tienda</a>
+      <a class="nav-wa wa" href="https://wa.me/34610383953" data-msg="Hola, me gustaría recibir información sobre los planes de La Parada."><svg aria-hidden="true"><use href="#i-wa"/></svg>Escríbenos por WhatsApp</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, me gustaría recibir información sobre los planes de La Parada.">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg><span>Hablemos<span class="lbl-long"> por WhatsApp</span></span>
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero" aria-labelledby="planes-title">
+  <img class="hero-bolt" src="assets/logo.png" alt="" aria-hidden="true">
+  <div class="container">
+    <nav class="crumb" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Planes</span></nav>
+    <p class="eyebrow">Planes · Temporada 2026-2027</p>
+    <h1 id="planes-title" class="h-xl" style="margin-top:20px;font-size:clamp(2.8rem,7vw,6rem)">Elige cómo <span class="accent">quieres entrenar.</span></h1>
+    <p class="lead">Cambia la frecuencia, no el método. Los dos planes siguen el mismo proceso de tecnificación y trabajan lo técnico, lo táctico y lo mental en grupos reducidos por nivel.</p>
+
+    <ul class="includes includes-wrap" aria-label="Incluido en los dos planes">
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Diagnóstico inicial</b><span>Conocemos su nivel antes de asignarle grupo.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Grupo reducido</b><span>Porteros de su nivel y edad.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Entrenadores especialistas</b><span>Titulados y exporteros profesionales.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Técnica, táctica y mente</b><span>Los tres pilares en cada sesión.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Material exclusivo</b><span>Ejercicios diseñados por porteros.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Ventajas en eventos</b><span>Descuentos en campus para alumnos.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section paper" aria-labelledby="plans-title" style="padding-top:clamp(64px,8vw,104px)">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Escuela de tecnificación</p>
+      <h2 id="plans-title" class="h-lg">Mismo método. <span class="accent">Tú eliges los días.</span></h2>
+      <p class="lead">Los dos planes incluyen exactamente lo mismo. La única diferencia es cuántos días entrena a la semana. ¿Dudas entre uno y otro? Escríbenos y te ayudamos a decidir según su edad, su nivel y lo que ya entrena con su club.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan" aria-labelledby="plan-1">
+        <p class="plan-for">1 día por semana</p>
+        <h3 id="plan-1">Base</h3>
+                <div class="plan-price"><span class="amount">40 €</span><span class="unit">/ mes</span></div>
+        <p class="desc">Una sesión a la semana con el método completo. Ideal para empezar o para sumar trabajo específico al entrenamiento del club.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>1 sesión semanal en grupo reducido</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Trabajo técnico, táctico y mental</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Diagnóstico inicial y seguimiento</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ventajas en campus y eventos</li>
+        </ul>
+        <a class="btn btn-ghost btn-outline wa" href="https://wa.me/34610383953" data-msg="Hola, me interesa el plan Base (1 sesión por semana) de La Parada. ¿Me dais más información?"><svg aria-hidden="true"><use href="#i-wa"/></svg>Me interesa</a>
+      </article>
+
+      <article class="plan featured" aria-labelledby="plan-2">
+        <span class="plan-badge">Recomendado</span>
+        <p class="plan-for">2 días por semana</p>
+        <h3 id="plan-2">Tecnificación</h3>
+                <div class="plan-price"><span class="amount">60 €</span><span class="unit">/ mes</span></div>
+        <p class="desc">El mismo método con el doble de frecuencia. Más repeticiones para consolidar cada gesto y llevarlo antes a la competición.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>2 sesiones semanales en grupo reducido</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Trabajo técnico, táctico y mental</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Diagnóstico inicial y seguimiento</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ventajas en campus y eventos</li>
+        </ul>
+        <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, me interesa el plan Tecnificación (2 sesiones por semana) de La Parada. ¿Me dais más información?"><svg aria-hidden="true"><use href="#i-wa"/></svg>Me interesa</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section paper" aria-labelledby="start-title" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:40px;padding-top:clamp(56px,7vw,88px);border-top:1px solid var(--line-paper)">
+      <p class="eyebrow">Cómo empezar</p>
+      <h2 id="start-title" class="h-lg">Tres pasos <span class="accent">hasta su primera sesión.</span></h2>
+    </div>
+    <ol class="start">
+      <li><span class="n" aria-hidden="true">1</span><h3>Escríbenos</h3><p>Abre un WhatsApp y cuéntanos la edad del portero, su experiencia y dónde juega.</p></li>
+      <li><span class="n" aria-hidden="true">2</span><h3>Te orientamos</h3><p>Te proponemos el plan, el grupo y el horario que mejor le encajan.</p></li>
+      <li><span class="n" aria-hidden="true">3</span><h3>Primera sesión</h3><p>Hacemos el diagnóstico inicial en el campo y empieza su proceso de tecnificación.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="campus-title">
+  <div class="container">
+    <div class="extra">
+      <div class="extra-body">
+        <p class="eyebrow">Campus y eventos</p>
+        <h2 id="campus-title" class="h-md" style="margin-top:16px">Navidad, Semana Santa y verano</h2>
+        <p class="lead">Los campus, sesiones intensivas y batallas de porteros se contratan aparte y están abiertos a cualquier portero. Los alumnos de la escuela tienen descuentos y ventajas.</p>
+        <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, quiero información y precios de los próximos campus de La Parada."><svg aria-hidden="true"><use href="#i-wa"/></svg>Pregunta por el próximo campus</a>
+      </div>
+      <figure><img src="assets/g18.webp" alt="Alumnos y entrenadores de La Parada en la grada tras un evento" width="900" height="1353" loading="lazy"></figure>
+    </div>
+
+    <div class="faq-grid" style="margin-top:clamp(72px,9vw,120px)">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="h-lg">Antes de <span class="accent">empezar.</span></h2>
+        <p class="lead">¿Tienes otra duda? Pregúntanos por WhatsApp y te respondemos.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>¿Desde qué edad se puede empezar?</summary><p>Formamos porteros a partir de los 5 años y los acompañamos hasta su desarrollo adulto. Los grupos se organizan por edad y nivel.</p></details>
+        <details><summary>¿Necesita experiencia previa como portero?</summary><p>No. El diagnóstico inicial nos sirve para ubicarle en el grupo adecuado, tanto si se pone los guantes por primera vez como si ya compite.</p></details>
+        <details><summary>¿Es compatible con los entrenamientos de su club?</summary><p>Sí. La escuela complementa el trabajo del club con entrenamiento específico del puesto, que es justo lo que muchos equipos no pueden ofrecer.</p></details>
+        <details><summary>¿Qué material necesita?</summary><p>Guantes de portero y ropa deportiva cómoda. Si necesitas equiparte, en nuestra <a href="https://laparadaonline.com/mi-cuenta/tiendaonline" style="color:var(--lime)">tienda</a> tienes guantes y ropa diseñados por porteros.</p></details>
+        <details><summary>¿Cuántos alumnos hay por grupo?</summary><p>Trabajamos en grupos reducidos para poder corregir a cada alumno de forma individual. Te contamos los detalles de su grupo cuando hablemos.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section final" aria-labelledby="final-title">
+  <img class="bg" src="assets/g05.webp" alt="" loading="lazy">
+  <div class="container">
+    <p class="eyebrow">Plazas limitadas por grupo</p>
+    <h2 id="final-title" class="h-lg" style="margin-top:20px">¿Hablamos de <span class="accent">su plan?</span></h2>
+    <p class="lead">Cuéntanos cómo es tu portero y te decimos qué plan le encaja mejor.</p>
+    <div class="btn-row">
+      <a class="btn btn-wa wa" href="https://wa.me/34610383953" data-msg="Hola, quiero que me ayudéis a elegir el plan de La Parada que mejor le encaja a mi portero.">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg>Abrir conversación en WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="index.html#metodo">Conocer el método</a>
+    </div>
+    <small>WhatsApp +34 610 383 953 · info@laparadaonline.com</small>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="color:var(--on-dark)"><img src="assets/logo.png" alt="" width="30" height="40"><span>La Parada<small>Escuela de tecnificación</small></span></a>
+        <p style="margin-top:16px;max-width:34ch">Escuela de tecnificación orientada exclusivamente a la formación de porteros.</p>
+      </div>
+      <div>
+        <h4>Escuela</h4>
+        <ul><li><a href="index.html#portero-moderno">Portero moderno</a></li><li><a href="index.html#metodo">Método</a></li><li><a href="index.html#proceso">Proceso</a></li><li><a href="index.html#campus">Campus y eventos</a></li><li><a href="planes.html">Planes</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li><a class="wa" href="https://wa.me/34610383953" data-msg="Hola, me gustaría recibir información sobre La Parada.">WhatsApp</a></li><li><a href="mailto:info@laparadaonline.com">info@laparadaonline.com</a></li><li><a href="https://www.instagram.com/laparadaoficial_">Instagram</a></li><li><a href="https://www.tiktok.com/@laparada_">TikTok</a></li><li><a href="https://www.youtube.com/channel/UCftYswNeyJ_nl__JTxoA7xQ">YouTube</a></li></ul>
+      </div>
+      <div>
+        <h4>Más</h4>
+        <ul><li><a href="https://laparadaonline.com/mi-cuenta/tiendaonline">Tienda</a></li><li><a href="https://laparadaonline.com/blog">Blog</a></li><li><a href="https://laparadaonline.com/mi-cuenta">Mi cuenta</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="y">2026</span> La Parada Escuela de Tecnificación S.L.</span>
+      <span><a href="https://laparadaonline.com/aviso-legal" style="padding:0">Aviso legal</a> · <a href="https://laparadaonline.com/politica-de-privacidad" style="padding:0">Privacidad y cookies</a> · <a href="https://laparadaonline.com/terminos-y-condiciones" style="padding:0">Términos y condiciones</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float wa" href="https://wa.me/34610383953" data-msg="Hola, me gustaría recibir información sobre los planes de La Parada." aria-label="Abrir conversación con La Parada en WhatsApp">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<script>
+(() => {
+  const WA = '34610383953';
+  document.querySelectorAll('a.wa').forEach(a => {
+    const msg = a.dataset.msg || '';
+    a.href = `https://wa.me/${WA}${msg ? '?text=' + encodeURIComponent(msg) : ''}`;
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+
+  const header = document.querySelector('.header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.getElementById('nav');
+  const setMenu = open => {
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  btn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); btn.focus(); } });
+
+  const float = document.querySelector('.wa-float');
+  const final = document.querySelector('.final');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => float.classList.toggle('hide', e.isIntersecting), { threshold: .35 }).observe(final);
+  }
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
