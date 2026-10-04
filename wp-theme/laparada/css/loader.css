@@ -26,13 +26,12 @@ html.lp-run .lp-loader-mask span:nth-child(7){animation-delay:.57s}
 html.lp-run .lp-loader-mask span:nth-child(8){animation-delay:.615s}
 html.lp-run .lp-loader-mask span:nth-child(9){animation-delay:.66s}
 html.lp-run .lp-loader-tag{animation:lpTag .5s ease-out .85s forwards}
-html.lp-run .lp-loader-bar{animation:lpBar 1.5s forwards}
+html.lp-run .lp-loader-bar{animation:lpBar 1.5s cubic-bezier(.45,.05,.25,1) forwards}
 
 @keyframes lpDraw{0%{stroke-dashoffset:1;fill-opacity:0;stroke-opacity:1;animation-timing-function:cubic-bezier(.5,0,.2,1)}50%{stroke-dashoffset:0;fill-opacity:0;stroke-opacity:1;animation-timing-function:ease-out}70%{stroke-dashoffset:0;fill-opacity:1;stroke-opacity:0}100%{stroke-dashoffset:0;fill-opacity:1;stroke-opacity:0}}
 @keyframes lpRise{to{transform:translateY(0)}}
 @keyframes lpTag{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-/* Avance irregular, como una carga real */
-@keyframes lpBar{0%{transform:scaleX(0);animation-timing-function:ease-out}18%{transform:scaleX(.18)}25%{transform:scaleX(.2);animation-timing-function:ease-out}45%{transform:scaleX(.52)}52%{transform:scaleX(.54);animation-timing-function:ease-out}75%{transform:scaleX(.86)}82%{transform:scaleX(.88);animation-timing-function:ease-out}100%{transform:scaleX(1)}}
+@keyframes lpBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* Salida (0,55 s): el telón sube y deja la web a la vista */
 html.lp-done .lp-loader{pointer-events:none;animation:lpLift .55s cubic-bezier(.76,0,.24,1) forwards}

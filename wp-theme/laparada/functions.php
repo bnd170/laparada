@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LP_VERSION', '1.0.3' );
+define( 'LP_VERSION', '1.0.4' );
 
 require_once get_theme_file_path( 'inc/customizer.php' );
 require_once get_theme_file_path( 'inc/nav.php' );
