@@ -13,6 +13,7 @@ define( 'LP_VERSION', '1.0.0' );
 
 require_once get_theme_file_path( 'inc/customizer.php' );
 require_once get_theme_file_path( 'inc/nav.php' );
+require_once get_theme_file_path( 'inc/images.php' );
 
 add_action(
 	'after_setup_theme',

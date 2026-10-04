@@ -13,7 +13,7 @@ get_header();
 ?>
 
 <section class="page-hero" aria-labelledby="planes-title">
-  <img class="hero-bolt" src="<?php echo esc_url( lp_asset( 'logo.png' ) ); ?>" alt="" aria-hidden="true">
+  <?php lp_image( 'logo', array( 'class' => 'hero-bolt', 'aria-hidden' => 'true' ) ); ?>
   <div class="container">
     <nav class="crumb" aria-label="Ruta"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a><span aria-hidden="true">/</span><span>Planes</span></nav>
     <p class="eyebrow">Planes · Temporada 2026-2027</p>
@@ -96,7 +96,7 @@ get_header();
         <p class="lead">Los campus, sesiones intensivas y batallas de porteros se contratan aparte y están abiertos a cualquier portero. Los alumnos de la escuela tienen descuentos y ventajas.</p>
         <a class="btn btn-wa wa" href="<?php echo esc_url( lp_wa_url() ); ?>" data-msg="Hola, quiero información y precios de los próximos campus de La Parada."><svg aria-hidden="true"><use href="#i-wa"/></svg>Pregunta por el próximo campus</a>
       </div>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g18.webp' ) ); ?>" alt="Alumnos y entrenadores de La Parada en la grada tras un evento" width="900" height="1353" loading="lazy"></figure>
+      <figure><?php lp_image( 'planes_extra', array( 'loading' => 'lazy' ) ); ?></figure>
     </div>
 
     <div class="faq-grid" style="margin-top:clamp(72px,9vw,120px)">
@@ -117,7 +117,7 @@ get_header();
 </section>
 
 <section class="section final" aria-labelledby="final-title">
-  <img class="bg" src="<?php echo esc_url( lp_asset( 'g05.webp' ) ); ?>" alt="" loading="lazy">
+  <?php lp_image( 'final_bg', array( 'class' => 'bg', 'loading' => 'lazy' ) ); ?>
   <div class="container">
     <p class="eyebrow">Plazas limitadas por grupo</p>
     <h2 id="final-title" class="h-lg" style="margin-top:20px">¿Hablamos de <span class="accent">su plan?</span></h2>

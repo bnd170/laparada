@@ -12,7 +12,7 @@ get_header();
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
-  <img class="hero-bolt" src="<?php echo esc_url( lp_asset( 'logo.png' ) ); ?>" alt="" aria-hidden="true">
+  <?php lp_image( 'logo', array( 'class' => 'hero-bolt', 'aria-hidden' => 'true' ) ); ?>
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">Escuela de tecnificación · solo porteros</p>
@@ -35,8 +35,8 @@ get_header();
       </div>
     </div>
     <div class="hero-media">
-      <div class="main"><img src="<?php echo esc_url( lp_asset( 'g13.webp' ) ); ?>" alt="Alumno de La Parada blocando el balón en el suelo tras una estirada junto al poste" width="900" height="1343" fetchpriority="high"></div>
-      <div class="inset"><img src="<?php echo esc_url( lp_asset( 'g12.webp' ) ); ?>" alt="Portero saltando para atrapar un balón alto" width="900" height="1349"></div>
+      <div class="main"><?php lp_image( 'hero_main', array( 'fetchpriority' => 'high' ) ); ?></div>
+      <div class="inset"><?php lp_image( 'hero_inset', array() ); ?></div>
       <span class="hero-tag">Por porteros, para porteros</span>
     </div>
   </div>
@@ -54,7 +54,7 @@ get_header();
   <div class="container">
     <div class="moderno-grid">
       <figure class="moderno-media reveal" style="margin:0">
-        <img src="<?php echo esc_url( lp_asset( 'g16.webp' ) ); ?>" alt="Portero de La Parada solo en el campo, levantando el brazo para ordenar a sus compañeros" width="900" height="1200" loading="lazy">
+        <?php lp_image( 'moderno', array( 'loading' => 'lazy' ) ); ?>
         <figcaption><b>Último defensor, primer atacante.</b><br>El portero de hoy participa en todo el juego.</figcaption>
       </figure>
       <div>
@@ -94,7 +94,7 @@ get_header();
     <div class="pillars">
       <article class="pillar" aria-labelledby="p1">
         <div class="pillar-media reveal">
-          <img src="<?php echo esc_url( lp_asset( 'g04.webp' ) ); ?>" alt="Portera con equipación verde atrapando un balón alto en plena estirada" width="900" height="1350" loading="lazy">
+          <?php lp_image( 'pilar_tecnica', array( 'loading' => 'lazy' ) ); ?>
           <span class="pillar-num" aria-hidden="true">01</span>
         </div>
         <div class="reveal">
@@ -111,7 +111,7 @@ get_header();
 
       <article class="pillar" aria-labelledby="p2">
         <div class="pillar-media reveal">
-          <img src="<?php echo esc_url( lp_asset( 'g20.webp' ) ); ?>" alt="Vista aérea de un ejercicio de porteros frente a la portería con conos y balones" width="900" height="1200" loading="lazy">
+          <?php lp_image( 'pilar_tactica', array( 'loading' => 'lazy' ) ); ?>
           <span class="pillar-num" aria-hidden="true">02</span>
         </div>
         <div class="reveal">
@@ -128,7 +128,7 @@ get_header();
 
       <article class="pillar" aria-labelledby="p3">
         <div class="pillar-media reveal">
-          <img src="<?php echo esc_url( lp_asset( 'g17.webp' ) ); ?>" alt="Vista aérea de un grupo de alumnos en círculo durante una charla de entrenamiento" width="900" height="1617" loading="lazy" style="object-position:50% 45%">
+          <?php lp_image( 'pilar_mental', array( 'loading' => 'lazy', 'style' => 'object-position:50% 45%' ) ); ?>
           <span class="pillar-num" aria-hidden="true">03</span>
         </div>
         <div class="reveal">
@@ -198,7 +198,7 @@ get_header();
       <p class="lead">Somos una escuela orientada exclusivamente a la formación de porteros. Entrenadores titulados, exporteros profesionales y colaboradores que transmiten su experiencia sin olvidar lo más importante: disfrutar de este deporte.</p>
     </div>
     <figure class="team-photo reveal" style="margin:0">
-      <img src="<?php echo esc_url( lp_asset( 'hero.webp' ) ); ?>" alt="Grupo de alumnos y entrenadores de La Parada posando en el campo" width="1400" height="840" loading="lazy">
+      <?php lp_image( 'equipo', array( 'loading' => 'lazy' ) ); ?>
       <p>Un equipo de porteros.<br><span class="accent">Para porteros.</span></p>
     </figure>
     <div class="diffs">
@@ -230,18 +230,9 @@ get_header();
       <h2 id="gal-title" class="h-lg">Sesiones reales. <span class="accent">Porteros reales.</span></h2>
     </div>
     <div class="gallery">
-      <figure><img src="<?php echo esc_url( lp_asset( 'g03.webp' ) ); ?>" alt="Portero estirándose para blocar un balón raso durante un ejercicio" width="1400" height="837" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g05.webp' ) ); ?>" alt="Portero saltando para atrapar un balón alto" width="900" height="1522" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g08.webp' ) ); ?>" alt="Alumno con la camiseta negra de La Parada" width="900" height="1611" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g14.webp' ) ); ?>" alt="Grupo de porteros esperando su turno frente a la portería" width="1400" height="837" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g06.webp' ) ); ?>" alt="Vista aérea de una escalera de coordinación en el césped" width="900" height="1607" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g19.webp' ) ); ?>" alt="Portero realizando una parada acrobática" width="900" height="1608" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g01.webp' ) ); ?>" alt="Alumnos trabajando desplazamientos con balón" width="1400" height="840" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g09.webp' ) ); ?>" alt="Portero en carrera entre conos de agilidad" width="900" height="1617" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g02.webp' ) ); ?>" alt="Ejercicio de porteros en la portería con el entrenador" width="900" height="1200" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g11.webp' ) ); ?>" alt="Vista aérea de un ejercicio con colchoneta azul" width="900" height="1608" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'g07.webp' ) ); ?>" alt="Portero de espaldas preparado para la siguiente acción" width="900" height="1340" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'hero2.webp' ) ); ?>" alt="Varios porteros entrenando en el campo" width="1400" height="837" loading="lazy"></figure>
+<?php foreach ( lp_list_items( 'gallery' ) as $lp_item ) : ?>
+      <figure><a class="lb-item" href="<?php echo esc_url( $lp_item['full'] ); ?>" data-w="<?php echo (int) $lp_item['w']; ?>" data-h="<?php echo (int) $lp_item['h']; ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: image description */ __( 'Ampliar imagen: %s', 'laparada' ), $lp_item['alt'] ) ); ?>"><?php echo $lp_item['html']; // phpcs:ignore WordPress.Security.EscapeOutput ?></a></figure>
+<?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -271,15 +262,15 @@ get_header();
     </div>
     <div class="campus">
       <article class="camp reveal">
-        <img src="<?php echo esc_url( lp_asset( 'g18.webp' ) ); ?>" alt="Grupo de alumnos y entrenadores en la grada tras un evento" width="900" height="1352" loading="lazy">
+        <?php lp_image( 'campus_navidad', array( 'loading' => 'lazy' ) ); ?>
         <div class="camp-body"><span class="camp-when">Navidad</span><h3>Eventos especiales</h3><p>Jornadas temáticas y batallas de porteros para cerrar el año compitiendo.</p></div>
       </article>
       <article class="camp reveal">
-        <img src="<?php echo esc_url( lp_asset( 'g15.webp' ) ); ?>" alt="Alumnos sentados en el césped durante un descanso del campus" width="800" height="450" loading="lazy">
+        <?php lp_image( 'campus_semana_santa', array( 'loading' => 'lazy' ) ); ?>
         <div class="camp-body"><span class="camp-when">Semana Santa</span><h3>Campus intensivo</h3><p>Varios días seguidos de entrenamiento con mayor enfoque y volumen de trabajo.</p></div>
       </article>
       <article class="camp reveal">
-        <img src="<?php echo esc_url( lp_asset( 'g21.webp' ) ); ?>" alt="Vista aérea de un ejercicio de porteros en el área" width="894" height="1474" loading="lazy">
+        <?php lp_image( 'campus_verano', array( 'loading' => 'lazy' ) ); ?>
         <div class="camp-body"><span class="camp-when">Verano</span><h3>Escuelas de tecnificación</h3><p>Para seguir progresando cuando la temporada para y llegar listo a la siguiente.</p></div>
       </article>
     </div>
@@ -303,19 +294,16 @@ get_header();
       <a class="link-arrow" href="<?php echo esc_url( home_url( '/mi-cuenta/tiendaonline' ) ); ?>">Ir a la tienda <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="gear reveal">
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-1.webp' ) ); ?>" alt="Guantes La Parada blancos y azules" width="400" height="400" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-2.webp' ) ); ?>" alt="Guantes La Parada negros" width="400" height="400" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-3.webp' ) ); ?>" alt="Guantes La Parada blancos" width="400" height="400" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-4.webp' ) ); ?>" alt="Guantes La Parada azules con detalles en lima" width="400" height="400" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-5.webp' ) ); ?>" alt="Guantes La Parada negros con logo rosa" width="400" height="400" loading="lazy"></figure>
-      <figure><img src="<?php echo esc_url( lp_asset( 'guante-6.webp' ) ); ?>" alt="Guantes La Parada blancos con detalles en amarillo flúor" width="400" height="400" loading="lazy"></figure>
+<?php foreach ( lp_list_items( 'gear' ) as $lp_item ) : ?>
+      <figure><?php echo $lp_item['html']; // phpcs:ignore WordPress.Security.EscapeOutput ?></figure>
+<?php endforeach; ?>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="section final" aria-labelledby="final-title">
-  <img class="bg" src="<?php echo esc_url( lp_asset( 'g05.webp' ) ); ?>" alt="" loading="lazy">
+  <?php lp_image( 'final_bg', array( 'class' => 'bg', 'loading' => 'lazy' ) ); ?>
   <div class="container">
     <p class="eyebrow">Plazas limitadas por grupo</p>
     <h2 id="final-title" class="h-lg" style="margin-top:20px">Su próxima parada empieza <span class="accent">con un mensaje.</span></h2>

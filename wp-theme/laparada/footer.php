@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:var(--on-dark)"><img src="<?php echo esc_url( lp_asset( 'logo.png' ) ); ?>" alt="" width="30" height="40"><span>La Parada<small>Escuela de tecnificación</small></span></a>
+        <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:var(--on-dark)"><?php lp_image( 'logo', array() ); ?><span>La Parada<small>Escuela de tecnificación</small></span></a>
         <p style="margin-top:16px;max-width:34ch">Escuela de tecnificación orientada exclusivamente a la formación de porteros.</p>
       </div>
       <div>

@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <header class="header" id="top">
   <div class="container">
     <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-      <img src="<?php echo esc_url( lp_asset( 'logo.png' ) ); ?>" alt="" width="30" height="40">
+      <?php lp_image( 'logo', array() ); ?>
       <span>La Parada<small>Escuela de porteros</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="<?php esc_attr_e( 'Principal', 'laparada' ); ?>">
