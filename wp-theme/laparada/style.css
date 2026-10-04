@@ -3,7 +3,7 @@ Theme Name: La Parada
 Theme URI: https://laparadaonline.com
 Author: La Parada Escuela de Tecnificación
 Description: Tema clásico para la escuela de tecnificación de porteros La Parada. Portada, página de planes, WhatsApp como llamada a la acción principal. Diseñado para WordPress 7.1.
-Version: 1.0.4
+Version: 1.0.5
 Requires at least: 7.0
 Tested up to: 7.1.2
 Requires PHP: 8.1
@@ -326,8 +326,9 @@ p{margin:0;text-wrap:pretty}
 html.lb-open{overflow:hidden}
 .lb{border:0;padding:0;margin:0;max-width:none;max-height:none;width:100%;height:100%;background:rgba(5,6,4,.94);color:var(--on-dark);overflow:hidden}
 .lb::backdrop{background:rgba(5,6,4,.94)}
-.lb-stage{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(56px,8vh,88px) clamp(12px,6vw,96px)}
-.lb-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);transition:opacity .2s var(--ease)}
+.lb-stage{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);place-items:center;padding:clamp(56px,8vh,88px) clamp(12px,6vw,96px)}
+.lb-img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;min-width:0;min-height:0;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);transition:opacity .2s var(--ease)}
+@supports (height:100dvh){.lb-img{max-width:calc(100vw - 2*clamp(12px,6vw,96px));max-height:calc(100dvh - 2*clamp(56px,8vh,88px))}}
 .lb-img.loading{opacity:.25}
 .lb-cap{position:absolute;left:0;right:0;bottom:0;padding:14px 72px 18px;text-align:center;font-size:.95rem;color:var(--muted-dark);pointer-events:none;background:linear-gradient(transparent,rgba(5,6,4,.8))}
 .lb-count{position:absolute;top:22px;left:24px;font-variant-numeric:tabular-nums;color:var(--muted-dark);font-weight:600}
